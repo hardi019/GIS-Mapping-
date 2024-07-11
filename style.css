@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;500;600;700&display=swap');
+
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #f0f2f5;
+}
+#sidebar {
+    width: 300px;
+    background: #ffffff;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    overflow-y: auto;
+}
+
+#map {
+    flex: 1;
+    height: calc(100vh- 10px);
+}
+h1 {
+    font-size: 24px;
+    color: #333;
+    margin: 0 0 20px;
+    text-align: center;
+}
+.faculty-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.faculty-list li {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.3s;
+}
+.faculty-list li:hover {
+    background: #f0f0f0;
+}
+#routing-control {
+    margin-top: 20px;
+}
+.image-container {
+    text-align: center;
+    margin-top: 10px;
+}
+.image-container img {
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+.side-by-side-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+button {
+    padding: 10px 15px;
+    background-color: #f0f0f0;
+    color: #151515;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+    max-width: 200px;
+}
+button:hover {
+    background-color: #00B601;
+}
+.side-button {
+    max-width: 45%;
+}
+
+.hamburger {
+    display: none;
+    position: fixed; 
+    top: 20px; 
+    right: 20px; 
+    z-index: 999; 
+}
+
+@media only screen and (max-width: 768px) {
+    header h1 {
+        display: absolute;
+        font-size: 0.5rem; 
+        padding: 5px;
+        max-width: 70%;
+    }
+}
+
+.hamburger .line {
+    width: 30px; 
+    height: 3px; 
+    background-color: #ffffff; 
+    margin: 5px 0; 
+    transition: all 0.3s ease; 
+}
+
+
+.hamburger.open .line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.open .line:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.open .line:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+@media only screen and (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    #sidebar {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 250px;
+        background: #f4f4f4;
+        padding: 15px;
+        box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+        overflow-y: auto;
+        z-index: 998;
+    }
+
+    #sidebar.open {
+        display: block;
+    }
+
+    .zoom-icons {
+        position: absolute;
+        bottom: 10px; /* Menempatkan di bagian bawah */
+        right: 10px; /* Menempatkan di bagian kanan */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        z-index: 1000; /* Memastikan ikon tetap di atas peta */
+    }
+}
